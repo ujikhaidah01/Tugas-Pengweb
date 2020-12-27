@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bank Information APP</title>
+
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" />
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="slick/slick.css" />
+    <link rel="stylesheet" href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/tooplate-style.css" />
+    <!-- Templatemo style -->
+</head>
+
+<body>
+
+
+    <div class="tm-main-container">
+        <div class="tm-top-container">
+            <!-- Menu -->
+            <nav id="tmNav" class="tm-nav">
+                <li class="tm-nav-item">
+                    <a href="index.html" class="tm-nav-link">Kembali</a>
+                </li>
+        </div>
+        <!-- Site header -->
+        <header class="tm-site-header-box tm-bg-dark">
+            <p class="mb-0 tm-site-subtitle">Bank Information APP</p>
+            <br>
+            <h1 class="tm-site-title"> seminar</h1>
+
+        </header>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        || Bank Information APP||
+
+    </footer>
+    </div>
+    </div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/background.cycle.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script>
+        let slickInitDone = false;
+        let previousImageId = 0,
+            currentImageId = 0;
+        let pageAlign = "right";
+        let bgCycle;
+        let links;
+        let eachNavLink;
+
+        window.onload = function() {
+            $("body").addClass("loaded");
+        };
+
+
+        $(document).ready(function() {
+            // Set first page
+            $(".tm-section").fadeOut(0);
+            $(".tm-section-0").fadeIn();
+
+            bgCycle = $("body").backgroundCycle({
+                imageUrls: [
+                    "img/bg2.jpg",
+                ],
+                fadeSpeed: 2000,
+                duration: -1,
+                backgroundSize: SCALING_MODE_COVER
+            });
+
+        });
+
+        $(".tm-gallery").slick({
+            dots: true,
+            customPaging: function(slider, i) {
+                var thumb = $(slider.$slides[i]).data();
+                return `<a>${i + 1}</a>`;
+            },
+            infinite: true,
+            prevArrow: false,
+            nextArrow: false,
+            slidesToShow: slidesToShow,
+            slidesToScroll: slidesToScroll
+        });
+
+        // Open big image when a gallery image is clicked.
+        $(".slick-list").magnificPopup({
+            delegate: "a",
+            type: "image",
+            gallery: {
+                enabled: true
+            }
+        });
+    </script>
+</body>
+
+</html>
